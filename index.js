@@ -103,9 +103,9 @@ api.post("/task/add", function(req, res)
     });
 });
 
-api.delete("/task/delete", function(req, res)
+api.delete("/task/delete/:id", function(req, res)
 {
-    let id = req.body.id || "";
+    let id = req.params.id;
 
     model.deleteTask(id, function(err, response)
     {
